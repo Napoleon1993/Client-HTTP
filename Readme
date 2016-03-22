@@ -1,0 +1,23 @@
+Nume:Nastase Cosmin
+Tema: 3
+Descriere:
+		Tema se va apela cu ./http <arg1> -r , deoarece am implementat doar -r.
+		Pentru implementarea temei am folosit o coada de elemente de tipul unei structuri link care retine calea absoluta pana la folderul in care ma gasesc, nivelul la care ma aflu , stringul html , si calea pana la stringul html.Cat timp coada nu este goala scot cate un element din coada relizez conexiunea la server si descarc pagina html respectiva . Pe parcursul citirii verific daca pe linia citita se gaseste un alt link catre o pagina html , iar in cazul in care se gaseste il adaug in coada . Acum voi lua cateva functii pe rand si le voi explica.
+
+	-getCale : returneaza drumul pana la linkul html.
+		EX: /~kjt/index.html -> ~kjt/
+	-getLastString : returneaza in cazul meu dor stringul care contine ",html" 
+		EX: /~kjt/index.html -> index.html
+	-isHtml:verifica daca un string are un substring ".html"
+	-getIp:Primeste ca argument numele unui server si returneaza adresa IP
+	-getCwd:returneaza directorul curent in care ne aflam
+	-makeDirectors: primeste un string returnat de getCale si creeaza directorul cu numele ultimului token din cale in cazul in care ultimul token este diferit de ".."
+		Ex: /~kjt/general/ -> va creea directorul general
+	-init se apeleaza la inceput in main si adauga primul link in coada.
+	-confSock : realizeaza legatura daca se poate cu serverul
+	-PrelucrareAhref : returneaza un string ce reprezinta calea + html
+		EX : <a href="cgi-bin/search.html">Search</a> 
+							-> cgi-bin/search.htm
+	
+
+
